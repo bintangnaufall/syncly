@@ -1,7 +1,62 @@
 import 'package:flutter/material.dart';
+import 'package:syncly/widgets/task_item_widget.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  // Simpan status toggle task di dalam State
+  List<Map<String, dynamic>> tasks = [
+    {
+      'title': 'Finish thesis revision',
+      'time': '09:00',
+      'category': 'Personal',
+      'color': const Color(0xFFA855F7),
+      'categoryBgColor': const Color(0xFFF3E8FF),
+      'categoryTextColor': const Color(0xFF9333EA),
+      'isDone': false,
+    },
+    {
+      'title': 'Design attendance dashboard',
+      'time': '13:00',
+      'category': 'Attendance App',
+      'color': const Color(0xFF06B6D4),
+      'categoryBgColor': const Color(0xFFCFFAFE),
+      'categoryTextColor': const Color(0xFF155E75),
+      'isDone': false,
+    },
+    {
+      'title': 'Review SaaS attendance PR',
+      'time': '10:30',
+      'category': 'Work',
+      'color': const Color(0xFF10B981),
+      'categoryBgColor': const Color(0xFFD1FAE5),
+      'categoryTextColor': const Color(0xFF047857),
+      'isDone': false,
+    },
+    {
+      'title': 'Fix login authentication bug',
+      'time': '14:15',
+      'category': 'Attendance App',
+      'color': const Color(0xFF06B6D4),
+      'categoryBgColor': const Color(0xFFCFFAFE),
+      'categoryTextColor': const Color(0xFF155E75),
+      'isDone': true,
+    },
+    {
+      'title': 'Study Flutter & State',
+      'time': '19:00',
+      'category': 'Work',
+      'color': const Color(0xFF10B981),
+      'categoryBgColor': const Color(0xFFD1FAE5),
+      'categoryTextColor': const Color(0xFF047857),
+      'isDone': true,
+    },
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -16,6 +71,7 @@ class HomeScreen extends StatelessWidget {
               bottom: 180,
             ),
             children: [
+              // --- HEADER SECTION ---
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -159,7 +215,8 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              // Tambahkan di bawah Row Header di ListView HomeScreen
+
+              // --- QUICK CAPTURE SECTION ---
               Container(
                 padding: const EdgeInsets.only(
                   left: 8,
@@ -174,7 +231,7 @@ class HomeScreen extends StatelessWidget {
                       'Quick Capture',
                       style: TextStyle(
                         fontSize: 16,
-                        fontWeight: FontWeight.w500,
+                        fontWeight: FontWeight.bold,
                         color: Color(0xFF0F172A),
                       ),
                     ),
@@ -192,6 +249,7 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
               ),
+
               Container(
                 padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
@@ -259,7 +317,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                     const SizedBox(height: 4),
                     Text(
-                      'Capture anyting before you forget.',
+                      'Capture anything before you forget.',
                       style: TextStyle(
                         color: Colors.white.withValues(alpha: 0.85),
                         fontSize: 14,
@@ -400,14 +458,13 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
               ),
+
+              // --- TODAY'S PROGRESS CARD ---
               Container(
-                margin: EdgeInsets.symmetric(vertical: 20),
-                padding: EdgeInsets.all(25),
+                margin: const EdgeInsets.symmetric(vertical: 20),
+                padding: const EdgeInsets.all(25),
                 decoration: BoxDecoration(
-                  border: Border.all(
-                    color: Colors.white, // Warna stroke/border
-                    width: 1, // Ketebalan stroke
-                  ),
+                  border: Border.all(color: Colors.white, width: 1),
                   borderRadius: BorderRadius.circular(34),
                   gradient: const LinearGradient(
                     begin: Alignment.topLeft,
@@ -447,7 +504,7 @@ class HomeScreen extends StatelessWidget {
                           ],
                         ),
                         Container(
-                          padding: EdgeInsets.symmetric(
+                          padding: const EdgeInsets.symmetric(
                             vertical: 4,
                             horizontal: 12,
                           ),
@@ -457,13 +514,13 @@ class HomeScreen extends StatelessWidget {
                             boxShadow: [
                               BoxShadow(
                                 blurRadius: 2,
-                                color: Color(0xFF000000)
+                                color: const Color(0xFF000000)
                                     .withValues(alpha: 0.05),
-                                offset: Offset(0, 4),
+                                offset: const Offset(0, 4),
                               ),
                             ],
                           ),
-                          child: Text(
+                          child: const Text(
                             '40% Done',
                             style: TextStyle(
                               fontSize: 16,
@@ -475,11 +532,10 @@ class HomeScreen extends StatelessWidget {
                       ],
                     ),
                     const SizedBox(height: 12),
-
                     ClipRRect(
                       borderRadius: BorderRadius.circular(9999),
                       child: Container(
-                        padding: EdgeInsets.all(2),
+                        padding: const EdgeInsets.all(2),
                         height: 10,
                         width: double.infinity,
                         color: Colors.white.withValues(alpha: 0.8),
@@ -498,13 +554,11 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 12),
-
                     Divider(
-                      color: Color(0xFF7DD3FC).withValues(alpha: 0.4),
+                      color: const Color(0xFF7DD3FC).withValues(alpha: 0.4),
                       height: 1,
                     ),
                     const SizedBox(height: 15),
-
                     IntrinsicHeight(
                       child: Row(
                         children: [
@@ -532,10 +586,10 @@ class HomeScreen extends StatelessWidget {
                             ),
                           ),
                           VerticalDivider(
-                            color: Color(0xFF7DD3FC).withValues(alpha: 40),
+                            color: const Color(0xFF7DD3FC)
+                                .withValues(alpha: 0.4),
                             thickness: 1,
                           ),
-
                           Expanded(
                             child: Column(
                               children: const [
@@ -560,10 +614,10 @@ class HomeScreen extends StatelessWidget {
                             ),
                           ),
                           VerticalDivider(
-                            color: Color(0xFF7DD3FC).withValues(alpha: 40),
+                            color: const Color(0xFF7DD3FC)
+                                .withValues(alpha: 0.4),
                             thickness: 1,
                           ),
-
                           Expanded(
                             child: Column(
                               children: const [
@@ -593,9 +647,102 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
               ),
+
+              // --- TODAY'S TASK HEADER ---
+              Container(
+                margin: const EdgeInsets.symmetric(horizontal: 8),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        const Text(
+                          "Today's Task",
+                          style: TextStyle(
+                            color: Color(0xFF0F172A),
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        const SizedBox(width: 8),
+                        Container(
+                          width: 25,
+                          height: 25,
+                          decoration: BoxDecoration(
+                            color: const Color(0xFFE2E8F0)
+                                .withValues(alpha: 0.9),
+                            shape: BoxShape.circle,
+                          ),
+                          child: Center(
+                            child: Text(
+                              '${tasks.length}',
+                              style: const TextStyle(
+                                color: Color(0xFF334155),
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    const Text(
+                      'See all',
+                      style: TextStyle(
+                        color: Color(0xFF9333EA),
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 12),
+
+              // --- TASK LIST DYNAMIC ---
+              Column(
+                children: List.generate(tasks.length, (index) {
+                  final item = tasks[index];
+                  return TaskItemWidget(
+                    title: item['title'],
+                    time: item['time'],
+                    category: item['category'],
+                    color: item['color'],
+                    categoryBgColor: item['categoryBgColor'],
+                    categoryTextColor: item['categoryTextColor'],
+                    isDone: item['isDone'],
+                    onToggle: () {
+                      setState(() {
+                        tasks[index]['isDone'] = !tasks[index]['isDone'];
+                      });
+                    },
+                    trailing: item['isDone']
+                        ? Container(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 12,
+                              vertical: 4,
+                            ),
+                            decoration: BoxDecoration(
+                              color: const Color(0xFFE6F4EA),
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            child: const Text(
+                              'Done',
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xFF34A853),
+                              ),
+                            ),
+                          )
+                        : null,
+                  );
+                }),
+              ),
             ],
           ),
 
+          // --- FLOATING QUICK CAPTURE BUTTON ---
           Positioned(
             bottom: 120,
             right: 20,
