@@ -32,6 +32,20 @@ class _MyAppState extends State<MyApp> {
     Icons.person_outline_rounded,
   ];
 
+  final List<Widget> pages = [
+    const Center(child: Text('Halaman Home')),
+    const Center(
+      child: Text('Halaman Grid / Menu', style: TextStyle(fontSize: 20)),
+    ),
+    const Center(
+      child: Text('Halaman Kalender', style: TextStyle(fontSize: 20)),
+    ),
+    const Center(
+      child: Text('Halaman Dokumen', style: TextStyle(fontSize: 20)),
+    ),
+    const Center(child: Text('Halaman Profil', style: TextStyle(fontSize: 20))),
+  ];
+
   @override
   void dispose() {
     pageController.dispose();
@@ -58,6 +72,17 @@ class _MyAppState extends State<MyApp> {
                 ),
               ),
             ),
+
+            PageView(
+              controller: pageController,
+              onPageChanged: (index) {
+                setState(() {
+                  selectedIndex = index;
+                });
+              },
+              children: pages,
+            ),
+
             Positioned(
               bottom: 30,
               left: 20,
@@ -85,6 +110,11 @@ class _MyAppState extends State<MyApp> {
                         setState(() {
                           selectedIndex = index;
                         });
+                        pageController.animateToPage(
+                          index,
+                          duration: const Duration(milliseconds: 300),
+                          curve: Curves.easeInOut,
+                        );
                       },
                       child: AnimatedContainer(
                         duration: const Duration(milliseconds: 250),
