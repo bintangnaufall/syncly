@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'screens/home_screen.dart';
+import 'screens/projects_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -35,9 +36,7 @@ class _MyAppState extends State<MyApp> {
 
   final List<Widget> pages = [
     const HomeScreen(),
-    const Center(
-      child: Text('Halaman Grid / Menu', style: TextStyle(fontSize: 20)),
-    ),
+    const ProjectsScreen(),
     const Center(
       child: Text('Halaman Kalender', style: TextStyle(fontSize: 20)),
     ),
@@ -58,6 +57,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        resizeToAvoidBottomInset: false,
         body: Stack(
           children: [
             Container(
