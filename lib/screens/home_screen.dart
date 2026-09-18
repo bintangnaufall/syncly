@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:syncly/widgets/task_item_widget.dart';
+import 'package:syncly/widgets/task_card_widget.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -738,6 +739,57 @@ class _HomeScreenState extends State<HomeScreen> {
                         : null,
                   );
                 }),
+              ),
+              const SizedBox(height: 20),
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: 8),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Upcoming',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFF0F172A),
+                      ),
+                    ),
+                    Text(
+                      'This Week',
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
+                        color: Color(0xFF94A3B8),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 10),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  TaskCardWidget(
+                    category: 'Personal',
+                    title: 'Submit thesis revision',
+                    date: 'Tomorrow, 10:00',
+                    gradientColors: [Color(0xFFFAF5FF), Color(0xFFF3E8FF)],
+                    categoryTextColor: Color(0xFF7E22CE),
+                    dateTextColor: Color(0xFFC98EFF),
+                    lineColor: Color(0xFFE9D5FF),
+                    borderColor: Color(0xFFE9D5FF),
+                  ),
+                  TaskCardWidget(
+                    category: 'Attendance App',
+                    title: 'Client design sync',
+                    date: 'Sep 17, 15:00',
+                    gradientColors: [Color(0xFFFFFBEB), Color(0xFFFEF3C7)],
+                    categoryTextColor: Color(0xFF92400E),
+                    dateTextColor: Color(0xFFB45309),
+                    lineColor: Color(0xFFFDE68A),
+                    borderColor: Color(0xFFFDE68A),
+                  ),
+                ],
               ),
             ],
           ),
