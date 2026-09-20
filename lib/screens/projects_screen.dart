@@ -1,6 +1,5 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
+import 'package:syncly/widgets/project_card_widget.dart';
 
 class ProjectsScreen extends StatefulWidget {
   const new({super.key});
@@ -415,7 +414,258 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
               ],
             ),
           ),
-
+          Container(
+            padding: EdgeInsets.symmetric(vertical: 16),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 14, vertical: 6),
+                  decoration: BoxDecoration(
+                    color: Color(0xFF0F172A),
+                    borderRadius: BorderRadius.circular(9999),
+                    border: Border.all(
+                      color: Color(0xFF000000).withValues(alpha: 0.8),
+                      width: 1,
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withValues(alpha: 0.04),
+                        blurRadius: 15,
+                        offset: const Offset(0, 4),
+                      ),
+                    ],
+                  ),
+                  child: Text(
+                    'All (4)',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w500,
+                      fontSize: 14,
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 12),
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 14, vertical: 6),
+                  decoration: BoxDecoration(
+                    color: Color(0xFFFFFFFF),
+                    borderRadius: BorderRadius.circular(9999),
+                    border: Border.all(
+                      color: Color(0xFFFFFFFF).withValues(alpha: 0.12),
+                      width: 1,
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withValues(alpha: 0.04),
+                        blurRadius: 15,
+                        offset: const Offset(0, 4),
+                      ),
+                    ],
+                  ),
+                  child: Text(
+                    'Active (3)',
+                    style: TextStyle(
+                      color: Color(0xFF475569),
+                      fontWeight: FontWeight.w500,
+                      fontSize: 14,
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 12),
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 14, vertical: 6),
+                  decoration: BoxDecoration(
+                    color: Color(0xFFFFFFFF),
+                    borderRadius: BorderRadius.circular(9999),
+                    border: Border.all(
+                      color: Color(0xFFFFFFFF).withValues(alpha: 0.8),
+                      width: 1,
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withValues(alpha: 0.04),
+                        blurRadius: 15,
+                        offset: const Offset(0, 4),
+                      ),
+                    ],
+                  ),
+                  child: Text(
+                    'Completed',
+                    style: TextStyle(
+                      color: Color(0xFF475569),
+                      fontWeight: FontWeight.w500,
+                      fontSize: 14,
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 8),
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 14, vertical: 6),
+                  decoration: BoxDecoration(
+                    color: Color(0xFFFFFFFF),
+                    borderRadius: BorderRadius.circular(9999),
+                    border: Border.all(
+                      color: Color(0xFFFFFFFF).withValues(alpha: 0.8),
+                      width: 1,
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withValues(alpha: 0.04),
+                        blurRadius: 15,
+                        offset: const Offset(0, 4),
+                      ),
+                    ],
+                  ),
+                  child: Text(
+                    'Archived',
+                    style: TextStyle(
+                      color: Color(0xFF475569),
+                      fontWeight: FontWeight.w500,
+                      fontSize: 14,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 12),
+          ProjectCardWidget(
+            title: 'Attendance App',
+            tag: 'Development',
+            completedTasks: 8,
+            totalTasks: 11,
+            progressPercentage: 0.72,
+            dueDate: 'Sep 16',
+            tagColor: Color(0xFF065F46),
+            tagBackgroundColor: Color(0xFFD1FAE5),
+            strokeTagBackgroundColor: Color(0xFFA7F3D0),
+            backgroundColor: [
+              Color(0xFFEEFDF5),
+              Color(0xFFE6F9EF),
+              Color(0xFFD5F5E3)
+            ],
+            strokeBackgroundColor: Color(0xFF86EFAC).withValues(alpha: 0.4),
+            icon: Icons.folder_outlined,
+            iconColor: Color(0xFF047857),
+            iconBackgroundColor: Color(0xFF34D399).withValues(alpha: 0.2),
+            strokeIconBackgroundColor: Color(0xFF34D399).withValues(alpha: 0.4),
+            progressBarColor: Color(0xFF10B981),
+            progressBarBackgroundColor: Color(0xFFA7F3D0).withValues(alpha: 0.5),
+          ),
+          ProjectCardWidget(
+            title: 'Thesis',
+            tag: 'Personal',
+            completedTasks: 5,
+            totalTasks: 12,
+            progressPercentage: 0.45,
+            dueDate: 'Sep 18',
+            tagColor: Color(0xFF6B21A8),
+            tagBackgroundColor: Color(0xFFF3E8FF),
+            strokeTagBackgroundColor: Color(0xFFE9D5FF),
+            backgroundColor: [
+              Color(0xFFF5F3FF),
+              Color(0xFFEDE9FE),
+              Color(0xFFE0E7FF)
+            ],
+            strokeBackgroundColor: Color(0xFFC4B5FD).withValues(alpha: 0.4),
+            icon: Icons.menu_book_rounded,
+            iconColor: Color(0xFF7E22CE),
+            iconBackgroundColor: Color(0xFF8B5CF6).withValues(alpha: 0.2),
+            strokeIconBackgroundColor: Color(0xFF8B5CF6).withValues(alpha: 0.4),
+            progressBarColor: Color(0xFFA855F7),
+            progressBarBackgroundColor: Color(0xFFE9D5FF).withValues(alpha: 0.5),
+          ),
+          ProjectCardWidget(
+            title: 'Kelurahan Website',
+            tag: 'Development',
+            completedTasks: 9,
+            totalTasks: 15,
+            progressPercentage: 0.60,
+            dueDate: 'Sep 20',
+            tagColor: Color(0xFF1E40AF),
+            tagBackgroundColor: Color(0xFFDBEAFE),
+            strokeTagBackgroundColor: Color(0xFFBFDBFE),
+            backgroundColor: [
+              Color(0xFFEFF6FF),
+              Color(0xFFE0F2FE),
+              Color(0xFFDBEAFE)
+            ],
+            strokeBackgroundColor: Color(0xFF93C5FD).withValues(alpha: 0.4),
+            icon: Icons.language_rounded,
+            iconColor: Color(0xFF1D4ED8),
+            iconBackgroundColor: Color(0xFF3B82F6).withValues(alpha: 0.2),
+            strokeIconBackgroundColor: Color(0xFF3B82F6).withValues(alpha: 0.4),
+            progressBarColor: Color(0xFF3B82F6),
+            progressBarBackgroundColor: Color(0xFFBFDBFE).withValues(alpha: 0.5),
+          ),
+          ProjectCardWidget(
+            title: 'YBAD Website',
+            tag: 'Development',
+            completedTasks: 3,
+            totalTasks: 10,
+            progressPercentage: 0.30,
+            dueDate: 'Sep 24',
+            tagColor: Color(0xFF9F1239),
+            tagBackgroundColor: Color(0xFFFFE4E6),
+            strokeTagBackgroundColor: Color(0xFFFECDD3),
+            backgroundColor: [
+              Color(0xFFFFF1F2),
+              Color(0xFFFFE4E6),
+              Color(0xFFFED7AA)
+            ],
+            strokeBackgroundColor: Color(0xFFFDA4AF).withValues(alpha: 0.4),
+            icon: Icons.desktop_windows_outlined,
+            iconColor: Color(0xFFBE123C),
+            iconBackgroundColor: Color(0xFFFB7185).withValues(alpha: 0.2),
+            strokeIconBackgroundColor: Color(0xFFFB7185).withValues(alpha: 0.4),
+            progressBarColor: Color(0xFFF43F5E),
+            progressBarBackgroundColor: Color(0xFFFECDD3).withValues(alpha: 0.5),
+          ),
+          Container(
+            padding: EdgeInsets.all(14),
+            decoration: BoxDecoration(
+              color: Colors.white.withValues(alpha: 0.7),
+              borderRadius: BorderRadius.circular(16),
+              border: Border.all(
+                width: 1,
+                color: Color(0xFFE2E8F0),
+                style: BorderStyle.solid,
+              ),
+            ),
+            child: Row(
+              children: [
+                const Icon(
+                  Icons.auto_awesome_outlined,
+                  color: Color(0xFF475569),
+                  size: 20,
+                ),
+                const SizedBox(width: 12),
+                const Expanded(
+                  child: Text(
+                    'Need another space? Create a project in seconds.',
+                    style: TextStyle(
+                      color: Color(0xFF64748B),
+                      fontSize: 13,
+                      fontWeight: FontWeight.w500
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 1),
+                GestureDetector(
+                  onTap: () {},
+                  child: const Text(
+                    '+ Add',
+                    style: TextStyle(
+                      color: Color(0xFF4F46E5),
+                      fontSize: 13,
+                      fontWeight: FontWeight.bold
+                    )
+                  ),
+                )
+              ],
+            ),
+          )
         ],
       ),
     );
