@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:syncly/screens/detail_projects_screen.dart';
 import 'package:syncly/widgets/project_card_widget.dart';
 
 class ProjectsScreen extends StatefulWidget {
@@ -88,25 +89,42 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
                     ),
                   ),
                   const SizedBox(width: 8),
-                  Container(
-                    padding: EdgeInsets.symmetric(horizontal: 18, vertical: 14),
-                    decoration: BoxDecoration(
-                      color: Color(0xFF0F172A),
-                      borderRadius: BorderRadius.circular(9999),
-                    ),
-                    child: Row(
-                      children: [
-                        Icon(Icons.add_rounded, color: Colors.white, size: 16),
-                        const SizedBox(width: 6),
-                        Text(
-                          'New',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                          ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const DetailProjects(),
                         ),
-                      ],
+                      );
+                    },
+                    child: Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 18,
+                        vertical: 14,
+                      ),
+                      decoration: BoxDecoration(
+                        color: Color(0xFF0F172A),
+                        borderRadius: BorderRadius.circular(9999),
+                      ),
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.add_rounded,
+                            color: Colors.white,
+                            size: 16,
+                          ),
+                          const SizedBox(width: 6),
+                          Text(
+                            'New',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ],
@@ -543,7 +561,7 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
             backgroundColor: [
               Color(0xFFEEFDF5),
               Color(0xFFE6F9EF),
-              Color(0xFFD5F5E3)
+              Color(0xFFD5F5E3),
             ],
             strokeBackgroundColor: Color(0xFF86EFAC).withValues(alpha: 0.4),
             icon: Icons.folder_outlined,
@@ -551,7 +569,8 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
             iconBackgroundColor: Color(0xFF34D399).withValues(alpha: 0.2),
             strokeIconBackgroundColor: Color(0xFF34D399).withValues(alpha: 0.4),
             progressBarColor: Color(0xFF10B981),
-            progressBarBackgroundColor: Color(0xFFA7F3D0).withValues(alpha: 0.5),
+            progressBarBackgroundColor: Color(0xFFA7F3D0)
+                .withValues(alpha: 0.5),
           ),
           ProjectCardWidget(
             title: 'Thesis',
@@ -566,7 +585,7 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
             backgroundColor: [
               Color(0xFFF5F3FF),
               Color(0xFFEDE9FE),
-              Color(0xFFE0E7FF)
+              Color(0xFFE0E7FF),
             ],
             strokeBackgroundColor: Color(0xFFC4B5FD).withValues(alpha: 0.4),
             icon: Icons.menu_book_rounded,
@@ -574,7 +593,8 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
             iconBackgroundColor: Color(0xFF8B5CF6).withValues(alpha: 0.2),
             strokeIconBackgroundColor: Color(0xFF8B5CF6).withValues(alpha: 0.4),
             progressBarColor: Color(0xFFA855F7),
-            progressBarBackgroundColor: Color(0xFFE9D5FF).withValues(alpha: 0.5),
+            progressBarBackgroundColor: Color(0xFFE9D5FF)
+                .withValues(alpha: 0.5),
           ),
           ProjectCardWidget(
             title: 'Kelurahan Website',
@@ -589,7 +609,7 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
             backgroundColor: [
               Color(0xFFEFF6FF),
               Color(0xFFE0F2FE),
-              Color(0xFFDBEAFE)
+              Color(0xFFDBEAFE),
             ],
             strokeBackgroundColor: Color(0xFF93C5FD).withValues(alpha: 0.4),
             icon: Icons.language_rounded,
@@ -597,7 +617,8 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
             iconBackgroundColor: Color(0xFF3B82F6).withValues(alpha: 0.2),
             strokeIconBackgroundColor: Color(0xFF3B82F6).withValues(alpha: 0.4),
             progressBarColor: Color(0xFF3B82F6),
-            progressBarBackgroundColor: Color(0xFFBFDBFE).withValues(alpha: 0.5),
+            progressBarBackgroundColor: Color(0xFFBFDBFE)
+                .withValues(alpha: 0.5),
           ),
           ProjectCardWidget(
             title: 'YBAD Website',
@@ -612,7 +633,7 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
             backgroundColor: [
               Color(0xFFFFF1F2),
               Color(0xFFFFE4E6),
-              Color(0xFFFED7AA)
+              Color(0xFFFED7AA),
             ],
             strokeBackgroundColor: Color(0xFFFDA4AF).withValues(alpha: 0.4),
             icon: Icons.desktop_windows_outlined,
@@ -620,7 +641,8 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
             iconBackgroundColor: Color(0xFFFB7185).withValues(alpha: 0.2),
             strokeIconBackgroundColor: Color(0xFFFB7185).withValues(alpha: 0.4),
             progressBarColor: Color(0xFFF43F5E),
-            progressBarBackgroundColor: Color(0xFFFECDD3).withValues(alpha: 0.5),
+            progressBarBackgroundColor: Color(0xFFFECDD3)
+                .withValues(alpha: 0.5),
           ),
           Container(
             padding: EdgeInsets.all(14),
@@ -647,25 +669,32 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
                     style: TextStyle(
                       color: Color(0xFF64748B),
                       fontSize: 13,
-                      fontWeight: FontWeight.w500
+                      fontWeight: FontWeight.w500,
                     ),
                   ),
                 ),
                 const SizedBox(width: 1),
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const DetailProjects(),
+                      ),
+                    );
+                  },
                   child: const Text(
                     '+ Add',
                     style: TextStyle(
                       color: Color(0xFF4F46E5),
                       fontSize: 13,
-                      fontWeight: FontWeight.bold
-                    )
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                )
+                ),
               ],
             ),
-          )
+          ),
         ],
       ),
     );
