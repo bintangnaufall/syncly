@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:syncly/widgets/project_card_widget.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -200,19 +201,22 @@ class _DetailProjectsState extends State<DetailProjects> {
                   ],
                 ),
                 const SizedBox(height: 20),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Text(
-                      'PROJECT NAME',
-                      style: TextStyle(
-                        color: Color(0xFF94A3B8),
-                        fontWeight: FontWeight.bold,
-                        fontSize: 12,
-                        letterSpacing: 0.55,
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 5),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        'PROJECT NAME',
+                        style: TextStyle(
+                          color: Color(0xFF94A3B8),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 12,
+                          letterSpacing: 0.55,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
                 const SizedBox(height: 6),
                 Container(
@@ -246,44 +250,34 @@ class _DetailProjectsState extends State<DetailProjects> {
                       ),
                       contentPadding: const EdgeInsets.all(14),
                       border: InputBorder.none,
-                      suffixIcon: Padding(
-                        padding: const EdgeInsetsGeometry.only(right: 18),
-                        child: UnconstrainedBox(
-                          child: Container(
-                            width: 10,
-                            height: 10,
-                            decoration: const BoxDecoration(
-                              color: Color(0xFF34D399),
-                              shape: BoxShape.circle,
-                            ),
-                          ),
-                        ),
-                      ),
                     ),
                   ),
                 ),
                 const SizedBox(height: 20),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'DESCRIPTION',
-                      style: TextStyle(
-                        color: Color(0xFF94A3B8),
-                        fontWeight: FontWeight.bold,
-                        fontSize: 12,
-                        letterSpacing: 0.55,
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 5),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'DESCRIPTION',
+                        style: TextStyle(
+                          color: Color(0xFF94A3B8),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 12,
+                          letterSpacing: 0.55,
+                        ),
                       ),
-                    ),
-                    Text(
-                      'Optional',
-                      style: TextStyle(
-                        color: Color(0xFF94A3B8),
-                        fontWeight: FontWeight.w500,
-                        fontSize: 12,
+                      Text(
+                        'Optional',
+                        style: TextStyle(
+                          color: Color(0xFF94A3B8),
+                          fontWeight: FontWeight.w500,
+                          fontSize: 12,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
                 const SizedBox(height: 6),
                 Container(
@@ -322,6 +316,7 @@ class _DetailProjectsState extends State<DetailProjects> {
                     ),
                   ),
                 ),
+                
               ],
             ),
           ),
