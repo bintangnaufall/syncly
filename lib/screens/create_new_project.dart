@@ -11,17 +11,17 @@ void main() {
       statusBarBrightness: Brightness.light,
     ),
   );
-  runApp(const MaterialApp(home: DetailProjects()));
+  runApp(const MaterialApp(home: CreateNewProject()));
 }
 
-class DetailProjects extends StatefulWidget {
-  const DetailProjects({super.key});
+class CreateNewProject extends StatefulWidget {
+  const CreateNewProject({super.key});
 
   @override
-  State<DetailProjects> createState() => _DetailProjectsState();
+  State<CreateNewProject> createState() => CreateNewProjectState();
 }
 
-class _DetailProjectsState extends State<DetailProjects> {
+class CreateNewProjectState extends State<CreateNewProject> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(

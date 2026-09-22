@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:syncly/screens/detail_projects_screen.dart';
+import 'package:syncly/screens/create_new_project.dart';
+import 'package:syncly/screens/detail_project.dart';
 import 'package:syncly/widgets/project_card_widget.dart';
 
 class ProjectsScreen extends StatefulWidget {
@@ -94,7 +95,7 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const DetailProjects(),
+                          builder: (context) => const CreateNewProject(),
                         ),
                       );
                     },
@@ -548,29 +549,38 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
             ),
           ),
           const SizedBox(height: 12),
-          ProjectCardWidget(
-            title: 'Attendance App',
-            tag: 'Development',
-            completedTasks: 8,
-            totalTasks: 11,
-            progressPercentage: 0.72,
-            dueDate: 'Sep 16',
-            tagColor: Color(0xFF065F46),
-            tagBackgroundColor: Color(0xFFD1FAE5),
-            strokeTagBackgroundColor: Color(0xFFA7F3D0),
-            backgroundColor: [
-              Color(0xFFEEFDF5),
-              Color(0xFFE6F9EF),
-              Color(0xFFD5F5E3),
-            ],
-            strokeBackgroundColor: Color(0xFF86EFAC).withValues(alpha: 0.4),
-            icon: Icons.folder_outlined,
-            iconColor: Color(0xFF047857),
-            iconBackgroundColor: Color(0xFF34D399).withValues(alpha: 0.2),
-            strokeIconBackgroundColor: Color(0xFF34D399).withValues(alpha: 0.4),
-            progressBarColor: Color(0xFF10B981),
-            progressBarBackgroundColor: Color(0xFFA7F3D0)
-                .withValues(alpha: 0.5),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const DetailProject()),
+              );
+            },
+            child: ProjectCardWidget(
+              title: 'Attendance App',
+              tag: 'Development',
+              completedTasks: 8,
+              totalTasks: 11,
+              progressPercentage: 0.72,
+              dueDate: 'Sep 16',
+              tagColor: Color(0xFF065F46),
+              tagBackgroundColor: Color(0xFFD1FAE5),
+              strokeTagBackgroundColor: Color(0xFFA7F3D0),
+              backgroundColor: [
+                Color(0xFFEEFDF5),
+                Color(0xFFE6F9EF),
+                Color(0xFFD5F5E3),
+              ],
+              strokeBackgroundColor: Color(0xFF86EFAC).withValues(alpha: 0.4),
+              icon: Icons.folder_outlined,
+              iconColor: Color(0xFF047857),
+              iconBackgroundColor: Color(0xFF34D399).withValues(alpha: 0.2),
+              strokeIconBackgroundColor: Color(0xFF34D399)
+                  .withValues(alpha: 0.4),
+              progressBarColor: Color(0xFF10B981),
+              progressBarBackgroundColor: Color(0xFFA7F3D0)
+                  .withValues(alpha: 0.5),
+            ),
           ),
           ProjectCardWidget(
             title: 'Thesis',
@@ -596,29 +606,38 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
             progressBarBackgroundColor: Color(0xFFE9D5FF)
                 .withValues(alpha: 0.5),
           ),
-          ProjectCardWidget(
-            title: 'Kelurahan Website',
-            tag: 'Development',
-            completedTasks: 9,
-            totalTasks: 15,
-            progressPercentage: 0.60,
-            dueDate: 'Sep 20',
-            tagColor: Color(0xFF1E40AF),
-            tagBackgroundColor: Color(0xFFDBEAFE),
-            strokeTagBackgroundColor: Color(0xFFBFDBFE),
-            backgroundColor: [
-              Color(0xFFEFF6FF),
-              Color(0xFFE0F2FE),
-              Color(0xFFDBEAFE),
-            ],
-            strokeBackgroundColor: Color(0xFF93C5FD).withValues(alpha: 0.4),
-            icon: Icons.language_rounded,
-            iconColor: Color(0xFF1D4ED8),
-            iconBackgroundColor: Color(0xFF3B82F6).withValues(alpha: 0.2),
-            strokeIconBackgroundColor: Color(0xFF3B82F6).withValues(alpha: 0.4),
-            progressBarColor: Color(0xFF3B82F6),
-            progressBarBackgroundColor: Color(0xFFBFDBFE)
-                .withValues(alpha: 0.5),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const DetailProject()),
+              );
+            },
+            child: ProjectCardWidget(
+              title: 'Kelurahan Website',
+              tag: 'Development',
+              completedTasks: 9,
+              totalTasks: 15,
+              progressPercentage: 0.60,
+              dueDate: 'Sep 20',
+              tagColor: Color(0xFF1E40AF),
+              tagBackgroundColor: Color(0xFFDBEAFE),
+              strokeTagBackgroundColor: Color(0xFFBFDBFE),
+              backgroundColor: [
+                Color(0xFFEFF6FF),
+                Color(0xFFE0F2FE),
+                Color(0xFFDBEAFE),
+              ],
+              strokeBackgroundColor: Color(0xFF93C5FD).withValues(alpha: 0.4),
+              icon: Icons.language_rounded,
+              iconColor: Color(0xFF1D4ED8),
+              iconBackgroundColor: Color(0xFF3B82F6).withValues(alpha: 0.2),
+              strokeIconBackgroundColor: Color(0xFF3B82F6)
+                  .withValues(alpha: 0.4),
+              progressBarColor: Color(0xFF3B82F6),
+              progressBarBackgroundColor: Color(0xFFBFDBFE)
+                  .withValues(alpha: 0.5),
+            ),
           ),
           ProjectCardWidget(
             title: 'YBAD Website',
@@ -679,7 +698,7 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const DetailProjects(),
+                        builder: (context) => const CreateNewProject(),
                       ),
                     );
                   },
