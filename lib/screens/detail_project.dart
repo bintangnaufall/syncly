@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:syncly/widgets/task_card_item.dart';
 
 class DetailProject extends StatefulWidget {
   const DetailProject({super.key});
@@ -357,7 +358,10 @@ class _DetailProjectState extends State<DetailProject> {
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 Container(
-                                  padding: EdgeInsets.symmetric(vertical: 6, horizontal: 10),
+                                  padding: EdgeInsets.symmetric(
+                                    vertical: 6,
+                                    horizontal: 10,
+                                  ),
                                   decoration: BoxDecoration(
                                     color: Colors.white.withValues(alpha: 0.7),
                                     borderRadius: BorderRadius.circular(12),
@@ -376,18 +380,222 @@ class _DetailProjectState extends State<DetailProject> {
                                         style: TextStyle(
                                           color: Color(0xFF334155),
                                           fontSize: 12,
-                                          fontWeight: FontWeight.w500
-                                        )
-                                      )
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                      ),
                                     ],
                                   ),
-                                )
+                                ),
                               ],
                             ),
                           ),
                         ],
                       ),
                     ),
+                    Padding(
+                      padding: EdgeInsetsGeometry.symmetric(vertical: 16),
+                      child: SingleChildScrollView(
+                        scrollDirection:
+                            Axis.horizontal, // Memungkinkan scroll ke samping
+                        physics: const BouncingScrollPhysics(), // Efek scroll halus ala iOS
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              padding: EdgeInsets.symmetric(
+                                vertical: 8,
+                                horizontal: 16,
+                              ),
+                              decoration: BoxDecoration(
+                                color: Color(0xFF0F172A),
+                                borderRadius: BorderRadius.circular(9999),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black.withValues(alpha: 0.05),
+                                    blurRadius: 2,
+                                    offset: const Offset(0, 1),
+                                  ),
+                                ],
+                              ),
+                              child: Text(
+                                'Overview',
+                                style: TextStyle(
+                                  color: Color(0xFFFFFFFF),
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                            const SizedBox(width: 8),
+                            Container(
+                              padding: EdgeInsets.symmetric(
+                                vertical: 8,
+                                horizontal: 16,
+                              ),
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(9999),
+                                border: Border.all(
+                                  color: Color(0xFFE2E8F0)
+                                      .withValues(alpha: 0.8),
+                                  width: 1,
+                                ),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black.withValues(alpha: 0.05),
+                                    blurRadius: 2,
+                                    offset: const Offset(0, 1),
+                                  ),
+                                ],
+                              ),
+                              child: Text(
+                                'Task (11)',
+                                style: TextStyle(
+                                  color: Color(0xFF475569),
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                            const SizedBox(width: 8),
+                            Container(
+                              padding: EdgeInsets.symmetric(
+                                vertical: 8,
+                                horizontal: 16,
+                              ),
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(9999),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black.withValues(alpha: 0.05),
+                                    blurRadius: 2,
+                                    offset: const Offset(0, 1),
+                                  ),
+                                ],
+                              ),
+                              child: Text(
+                                'Notes (4)',
+                                style: TextStyle(
+                                  color: Color(0xFF475569),
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                            const SizedBox(width: 8),
+                            Container(
+                              padding: EdgeInsets.symmetric(
+                                vertical: 8,
+                                horizontal: 16,
+                              ),
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(9999),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black.withValues(alpha: 0.05),
+                                    blurRadius: 2,
+                                    offset: const Offset(0, 1),
+                                  ),
+                                ],
+                              ),
+                              child: Text(
+                                'Calendar (3)',
+                                style: TextStyle(
+                                  color: Color(0xFF475569),
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          children: [
+                            Text(
+                              "Today's Focus",
+                              style: TextStyle(
+                                color: Color(0xFF0F172A),
+                                fontWeight: FontWeight.bold,
+                                fontSize: 14,
+                              ),
+                            ),
+                            const SizedBox(width: 8),
+                            Container(
+                              padding: EdgeInsets.symmetric(
+                                vertical: 2,
+                                horizontal: 8,
+                              ),
+                              decoration: BoxDecoration(
+                                color: Color(0xFFE2E8F0).withValues(alpha: 0.7),
+                                borderRadius: BorderRadius.circular(9999),
+                              ),
+                              child: Text(
+                                "3 Items",
+                                style: TextStyle(
+                                  color: Color(0xFF475569),
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 12,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        Text(
+                          "View All",
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w800,
+                            color: Color(0xFF059669),
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 10),
+                    Column(
+                      children: [
+                        TaskCardItem(
+                          title: "Design attendance dashboard",
+                          timeText: "13:00 · Today",
+                          priorityText: "High",
+                          onTapTile: () {
+                            // Aksi saat tombol panah kanan diklik (misal: navigasi ke detail)
+                            print("Navigasi ke detail task");
+                          },
+                        ),
+
+                        const SizedBox(height: 8),
+
+                        TaskCardItem(
+                          title: "Create employee database",
+                          timeText: "16:00 · Today",
+                          priorityText: "Medium",
+                          onTapTile: () {
+                            // Aksi saat tombol panah kanan diklik (misal: navigasi ke detail)
+                            print("Navigasi ke detail task");
+                          },
+                        ),
+
+                        const SizedBox(height: 8),
+
+                        TaskCardItem(
+                          title: "Implement login system",
+                          timeText: "10:00 · Today",
+                          priorityText: "Urgent",
+                          onTapTile: () {
+                            // Aksi saat tombol panah kanan diklik (misal: navigasi ke detail)
+                            print("Navigasi ke detail task");
+                          },
+                        ),
+                      ],
+                    ),
+                    
                   ],
                 ),
               ],
